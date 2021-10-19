@@ -8,12 +8,7 @@
 import Foundation
 import Combine
 
-public enum NetworkError: Error {
-  case invalidURL
-}
-
 protocol NetworkerProtocol: AnyObject {
-  
   typealias Headers = [String: Any]
   
   func get<T>(type: T.Type,
@@ -24,7 +19,10 @@ protocol NetworkerProtocol: AnyObject {
 }
 
 final class Networker: NetworkerProtocol {
-  func get<T>(type: T.Type, url: URL, headers: Headers) -> AnyPublisher<T, Error> where T : Decodable {
+  
+  func get<T>(type: T.Type,
+              url: URL,
+              headers: Headers) -> AnyPublisher<T, Error> where T : Decodable {
     
     var urlRequest = URLRequest(url: url)
     
@@ -54,5 +52,4 @@ final class Networker: NetworkerProtocol {
       .map(\.data)
       .eraseToAnyPublisher()
   }
-  
 }

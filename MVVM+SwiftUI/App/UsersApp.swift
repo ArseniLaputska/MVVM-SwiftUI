@@ -2,7 +2,7 @@
 //  UsersApp.swift
 //  MVVM+SwiftUI
 //
-//  Created by Arseni Laputska on 18.10.21.
+//  Created by Arseni Laputska on 15.10.21.
 //
 
 import SwiftUI

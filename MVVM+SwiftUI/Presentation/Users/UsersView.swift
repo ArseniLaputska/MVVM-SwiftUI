@@ -20,14 +20,16 @@ struct UsersView: View {
         
         // 4
         NavigationLink(
-          destination: UsersRouter.destinationForTappedUser(user: user)
+          destination: UsersRouter.destinationForTappedUser(
+            user: user)
         ) {
           Text(user.firstName)
         }
         
       }.navigationTitle("Users")
     }.onAppear(perform: {
-      viewModel.appear()
+      // 5
+      viewModel.onAppear()
     })
   }
 }
