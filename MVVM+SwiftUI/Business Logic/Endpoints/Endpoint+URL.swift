@@ -13,7 +13,7 @@ extension Endpoint {
     var components = URLComponents()
     components.scheme = "https"
     components.host = "dummyapi.io"
-    components.path = "/data/api" + path
+    components.path = "/data/v1" + path
     components.queryItems = queryItems
     
     guard let url = components.url else {
@@ -25,7 +25,7 @@ extension Endpoint {
   
   var headers: [String: Any] {
     return [
-      "app-id":"61699a7c882290360c9c67ce"
+      "app-id": "61699a7c882290360c9c67ce"
     ]
   }
   

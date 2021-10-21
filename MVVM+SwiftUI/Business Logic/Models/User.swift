@@ -20,7 +20,7 @@ struct User: Codable, Identifiable {
 }
 
 extension User {
-  static func fake() -> Self {
+  static func fake() -> User {
     return User(id: "1",
                 title: "Test",
                 firstName: "First Name",

@@ -10,3 +10,9 @@ import Foundation
 struct Users: Codable {
   let data: [User]
 }
+
+extension Users {
+  static func fake() -> Users {
+    return Users(data: [User.fake()])
+  }
+}

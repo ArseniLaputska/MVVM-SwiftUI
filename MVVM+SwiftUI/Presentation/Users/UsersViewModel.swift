@@ -11,7 +11,7 @@ import Combine
 class UsersViewModel: ObservableObject {
   
   // 1
-  @Published public var users: Users = Users(data: [])
+  @Published public var users: Users
   
   // 2
   private var usersService: UsersServiceProtocol

@@ -19,7 +19,6 @@ protocol UserPictureServiceProtocol: AnyObject {
 }
 
 final class UserPictureService: UserPictureServiceProtocol {
-  
   let networker: NetworkerProtocol
   
   init(networker: NetworkerProtocol = Networker()) {
@@ -27,7 +26,6 @@ final class UserPictureService: UserPictureServiceProtocol {
   }
   
   func getUserAvatarData(urlString: String) -> AnyPublisher<Data, Error> {
-    
     guard let url = URL(string: urlString) else {
       return Fail<Data, Error>(error: NetworkError.invalidURL).eraseToAnyPublisher()
     }
